@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= yield(:title) %> | iZone</title>
+  <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<a href="/static_pages/about">About</a>
+<a href="/static_pages/home">Home</a>
+<a href="/static_pages/contact">Contact Us</a>
+<a href="/static_pages/help">Help</a>
+<h2> This will appear on every page</h2>
 <%= yield %>
 
 </body>
