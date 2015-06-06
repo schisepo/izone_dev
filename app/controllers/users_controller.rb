@@ -68,7 +68,11 @@ class UsersController < ApplicationController
   # Confirms the correct user.
   def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
+      unless current_user?(@user)
+        flash[:danger]="You can only view your own profile"
+        redirect_to(users_path)
+      end
+      #redirect_to(root_url) unless current_user?(@user)
   end
 
        # Confirms an admin user.
