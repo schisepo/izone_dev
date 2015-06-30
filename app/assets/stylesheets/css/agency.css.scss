@@ -175,7 +175,8 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-brand {
-    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    /*font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;*/
     color: #fed136;
 }
 
@@ -232,7 +233,7 @@ fieldset[disabled] .btn-xl.active {
 
 @media(min-width:768px) {
     .navbar-default {
-        padding: 25px 0;
+        padding: 0px 0;
         border: 0;
         background-color: transparent;
         -webkit-transition: padding .3s;
