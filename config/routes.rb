@@ -24,8 +24,15 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   resources:users
+  resources:organisations
+  resources:tasks
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
+  resources :organisations do 
+    resources :users 
+    resources :tasks
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

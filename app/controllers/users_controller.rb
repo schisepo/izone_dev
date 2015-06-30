@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index,:edit, :update, :show, :destroy]
-  before_action :correct_user,   only: [:edit, :update, :show]
+  before_action :logged_in_user, only: [:index,:edit, :update,:destroy]
+  before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
 
@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
  def new
     @user = User.new
+    @user.organisation_id =params[:organisation_id]
  end
  def show
     @user = User.find(params[:id])
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
     if @user.save
        @user.send_activation_email
       flash[:info] = "Please check your email to activate your account."
-      redirect_to root_url
+      redirect_to Organisation.find(@user.organisation_id)
     else
       render 'new'
     end
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      # Handle a successful update.
+      # Handle a succes sful update.
       flash[:success] = "Profile updated"
       redirect_to @user
 
@@ -52,7 +53,9 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation,
+                                   :organisation_id,:bio,:jobtitle,
+                                   :facebook,:twitter,:linkedin)
     end
 
    # Before filters
@@ -77,6 +80,7 @@ class UsersController < ApplicationController
 
        # Confirms an admin user.
   def admin_user
+      flash[:warning] ="Function can only be performed by admin user"
       redirect_to(root_url) unless current_user.admin?
   end
 

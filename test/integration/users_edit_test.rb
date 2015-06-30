@@ -4,6 +4,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
 
   def setup
     @user = users(:michael)
+    @organisation =organisations(:one)
   end
 
   test "unsuccessful edit" do
@@ -13,7 +14,8 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     patch user_path(@user), user: { name:  "",
                                     email: "foo@invalid",
                                     password:              "foo",
-                                    password_confirmation: "bar" }
+                                    password_confirmation: "bar",
+                                    organisation_id:@organisation.id }
     assert_template 'users/edit'
   end
 
@@ -26,7 +28,8 @@ test "successful edit with friendly forwarding" do
     patch user_path(@user), user: { name:  name,
                                     email: email,
                                     password:              "",
-                                    password_confirmation: "" }
+                                    password_confirmation: "" ,
+                                    organisation_id:@organisation.id}
     assert_not flash.empty?
     assert_redirected_to @user
     @user.reload

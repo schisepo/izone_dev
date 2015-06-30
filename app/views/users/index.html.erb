@@ -2,11 +2,29 @@
 <h1>All users</h1>
 
 <%= will_paginate %>
-
-<ul class="users">
-  <% @users.each do |user| %>
-        <%= render user %>
-  <% end %>
-</ul>
-
+	<table class="table table-bordered table-hover table-condensed">
+		<thead>
+			<tr>
+			<% if logged_in? %>
+				<th>
+					Organisation
+				</th>
+			<% end %>
+				<th>
+					User
+				</th>
+				<th>
+					Title
+				</th>
+				<th>
+					Email
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @users.each do |user| %>
+			          <%= render user %>
+			<% end %>
+		</tbody>
+	</table>
 <%= will_paginate %>

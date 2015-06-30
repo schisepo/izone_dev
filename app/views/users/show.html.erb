@@ -1,11 +1,28 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
+<section id="portfolio" class="bg-light-gray">
+  <div class="container">
+    <div class="row">
+            <div class="col-lg-12 text-center">
+                    <h2 class="section-heading"><%=@user.name%></h2>
+                 <!--    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
+            </div>
+        </div>
+
+<div class="col-sm-4">
+    <div class="team-member">
+      <%= gravatar_for @user %>
+      <h4><%= @user.name %></h4>
+      <p class="text-muted"><%=@user.jobtitle%></p>
+      <p><%=@user.bio%></p>
+      <ul class="list-inline social-buttons">
+        <li><a href="#"><i class="fa fa-twitter"></i></a>
+        </li>
+        <li><a href="#"><i class="fa fa-facebook"></i></a>
+        </li>
+        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+        </li>
+      </ul>
+   </div>
 </div>
+</div>
+</section>

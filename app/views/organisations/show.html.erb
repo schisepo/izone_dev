@@ -1,0 +1,88 @@
+<% provide(:title, @organisation.name) %>
+<section id="portfolio" class="bg-light-gray">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 text-right">
+                      <h4 class="section-heading"><%= gravatar_for @organisation,size:50 %><%= @organisation.name %></h4>
+                      <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+      </div>
+      <!-- <div class="col-xs-3">
+      side menu goes here
+    </div> -->
+    <div class="col-xs-12">
+
+      <div class="tabbable" id="tabs-860189">
+        <ul class="nav nav-tabs">
+          <li>
+            <a href="#panel-609348" data-toggle="tab">Our Founders</a>
+          </li>
+          <li class="active">
+            <a href="#panel-659209" data-toggle="tab">Our Tasks</a>
+          </li>
+          <li >
+            <a href="#panel-659206" data-toggle="tab">Our Value Proposition</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane" id="panel-609348">
+            <p>
+            <% if @organisation.users.any? %>
+              <table class="table table-bordered table-hover table-condensed">
+                <thead>
+                  <tr>
+                  <% if logged_in? %>
+                  <th>
+                    Organisation
+                  </th>
+                  <% end %>
+                    <th>
+                      User
+                    </th>
+                    <th>
+                      Title
+                    </th>
+                    <th>
+                      Email
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @users.each do |user| %>
+                            <%= render user %>
+                  <% end %>
+                </tbody>
+              </table>
+            <% end %>
+            </div>
+          <div class="tab-pane active" id="panel-659209">
+            <p>
+            <% if @organisation.tasks.any? %>
+      <!-- <p>Founders (<%= @organisation.users.count %>)</p> -->
+            <ol class="microposts">
+              <%= render @tasks %>
+            </ol>
+            <%= will_paginate @tasks %>
+            <% end %>
+            </p>
+          </div>
+          <div class="tab-pane" id="panel-659206">
+            <p>
+              Value Prop comes here
+            </p>
+          </div>
+        </div>
+      </div>  
+    </div>
+    </div>       
+</div>
+</section>
+
+
+
+
+
+
+    
+    
+
+

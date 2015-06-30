@@ -3,13 +3,19 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 
   def setup
-    @user = User.new(name: "Example User", email: "user@example.com",
+    @organisation=organisations(:one)
+    @user = @organisation.users.build(name: "Example User", email: "user@example.com",
                      password: "foobar", password_confirmation: "foobar")
 
   end
 
   test "should be valid" do
     assert @user.valid?
+  end
+
+  test "organisation id should be present" do
+    @user.organisation_id="  "
+    assert_not @user.valid?
   end
 
   test "name should be present" do
@@ -66,8 +72,12 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
   end
-test "authenticated? should return false for a user with nil digest" do
+  test "authenticated? should return false for a user with nil digest" do
     assert_not @user.authenticated?(:remember,'')
+  end
+
+  test "order should be most recent first" do
+    assert_equal users(:archer), User.first
   end
 
 end

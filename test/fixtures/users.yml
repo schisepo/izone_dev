@@ -6,10 +6,10 @@ michael:
   admin: true
   activated: true
   activated_at: Time.zone.now
-
+  organisation_id: 1
 
 archer:
-  name: Sterling Archer
+  name: Archer Sterling
   email: duchess@example.gov
   password_digest: <%= User.digest('password') %>
   activated: true

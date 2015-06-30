@@ -3,6 +3,7 @@ require 'test_helper'
 class UsersSignupTest < ActionDispatch::IntegrationTest
   def setup
     ActionMailer::Base.deliveries.clear
+    @organisation =organisations(:one)
   end
 
   test "invalid signup information" do
@@ -11,7 +12,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
       post users_path, user: { name:  "",
                                email: "user@invalid",
                                password:              "foo",
-                               password_confirmation: "bar" }
+                               password_confirmation: "bar",
+                               organisation_id: @organisation.id}
     end
     assert_template 'users/new'
     assert_select 'div#error_explanation'
@@ -25,7 +27,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
       post users_path, user: { name:  "Example User",
                                email: "user@example.com",
                                password:              "password",
-                               password_confirmation: "password" }
+                               password_confirmation: "password" ,
+                               organisation_id: @organisation.id}
     end
     assert_equal 1, ActionMailer::Base.deliveries.size
     user = assigns(:user)

@@ -1,10 +1,19 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
-
+<section id="portfolio" class="bg-light-gray">
+  <div class="container">
+    <div class="row">
+            <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Sign up</h2>
+                 <!--    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
+            </div>
+        </div>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
+
+      <%= f.label :organisation_id %>
+      <%= f.text_field :organisation_id, class: 'form-control' %>
 
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
@@ -22,5 +31,6 @@
     <% end %>
   </div>
 </div>
-
+</div>
+</section>
 

@@ -1,0 +1,18 @@
+    <!-- Header -->
+    <header>
+        <div class="container">
+
+           <div class="intro-text">
+                <% flash.each do |message_type, message| %>
+                <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+                <% end %>
+                <div class="intro-lead-in">Welcome To Our eHub!</div>
+                <div class="intro-heading">It's Great To Meet You</div>
+                <li><%= link_to "What We Do", root_path(anchor: "services"),class:"page-scroll btn btn-xl"%></li>   
+                <p> 
+                <li><%= link_to "Class '15", root_path(anchor: "services"),class:"page-scroll btn btn-xl"%></li>               
+
+
+            </div>
+        </div>
+    </header>

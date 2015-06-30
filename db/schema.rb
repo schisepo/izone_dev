@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608134433) do
+ActiveRecord::Schema.define(version: 20150629092631) do
+
+  create_table "organisations", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "bpn"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.boolean  "status"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "organisation_id"
+  end
+
+  add_index "tasks", ["organisation_id"], name: "index_tasks_on_organisation_id"
+  add_index "tasks", ["user_id"], name: "index_tasks_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -27,8 +47,15 @@ ActiveRecord::Schema.define(version: 20150608134433) do
     t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+    t.integer  "organisation_id"
+    t.text     "bio"
+    t.string   "jobtitle"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "linkedin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["organisation_id"], name: "index_users_on_organisation_id"
 
 end

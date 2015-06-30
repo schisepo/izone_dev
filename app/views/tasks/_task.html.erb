@@ -1,0 +1,9 @@
+<li> 
+       
+	  <p><%= link_to ">>>", task%></p>
+      <p><%=task.content %></p>
+      <p class="text-muted"><%=task.user.name%></p>
+      <span class="timestamp">
+    Posted <%= time_ago_in_words(task.created_at) %> ago.
+  </span>
+</li>

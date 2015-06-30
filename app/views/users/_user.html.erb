@@ -1,9 +1,19 @@
-<li>
-  <%= gravatar_for user, size: 50 %>
-  <%= link_to user.name, user %>
-  <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-  <% end %>
+    <tr>
+    <% if logged_in? %>
+      <td><%= link_to Organisation.find(user.organisation_id).name, Organisation.find(user.organisation_id) %></td>
+      <% end %>
+      <td><%= link_to user.name, user %></td>
+      <td class="text-muted"><%=user.jobtitle%></td>
+      <td class="text-muted"><%=user.email%></td>
+        <% if logged_in? %>
+        <% if current_user.admin? && !current_user?(user) %>
+		    <td><%= link_to "", user, method: :delete,
+		                                  data: { confirm: "Permanantly remove #{user.name}?"}, class:"glyphicon glyphicon-trash" %></td>
+		  <% end %>
+ 		 <% end %>
+ 	</tr>
 
-</li>
+
+
+
+

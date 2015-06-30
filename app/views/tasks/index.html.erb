@@ -1,0 +1,12 @@
+<% provide(:title, 'All Tasks') %>
+<h1>All tasks</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <% @tasks.each do |task| %>
+        <%= render task %>
+  <% end %>
+</ul>
+
+<%= will_paginate %>

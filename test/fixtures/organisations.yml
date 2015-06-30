@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Example Organisation
+  email: example@organisation.org
+  bpn: 12345
+
+two:
+  name: Sample Organisation
+  email: sample@organisation.org
+  bpn: 56789
