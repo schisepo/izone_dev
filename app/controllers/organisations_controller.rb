@@ -16,7 +16,6 @@ def index
  def create
  	@organisation = Organisation.new(organisation_params)
  	   if @organisation.save
-	       #@user.send_activation_email
 	      flash[:info] = "Organisation Created."
 	      flash[:danger]="Please create a profile for one of your founders."
  		#byebug

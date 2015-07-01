@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   get 'signup'=>'users#new'
 
+  get 'register' =>'organisations#new'
+
   root 'static_pages#home'
 
   resources:users

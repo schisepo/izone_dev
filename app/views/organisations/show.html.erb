@@ -1,5 +1,5 @@
 <% provide(:title, @organisation.name) %>
-<section id="portfolio" class="bg-light-gray">
+<section class="bg-light-gray organisation">
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12 text-right">
@@ -49,20 +49,40 @@
                 <tbody>
                   <% @users.each do |user| %>
                             <%= render user %>
-                  <% end %>
+                  <% end %>                  
                 </tbody>
-              </table>
+              </table>              
             <% end %>
+            <%= link_to "Add Founder", new_organisation_user_path(@organisation),class:"page-scroll btn btn-xl"%>
             </div>
           <div class="tab-pane active" id="panel-659209">
             <p>
             <% if @organisation.tasks.any? %>
-      <!-- <p>Founders (<%= @organisation.users.count %>)</p> -->
-            <ol class="microposts">
-              <%= render @tasks %>
-            </ol>
-            <%= will_paginate @tasks %>
+     <table class="table table-bordered table-hover table-condensed">
+                <thead>
+                  <tr>
+                    <th>
+                      Date Created
+                    </th>
+                    <th>
+                      Task
+                    </th>
+                    <th>
+                      Status
+                    </th>
+                    <th>
+                      Assigned To
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @tasks.each do |task| %>
+                            <%= render task %>
+                  <% end %>                  
+                </tbody>
+              </table>
             <% end %>
+            <%= link_to "Add Task", new_organisation_task_path(@organisation),class:"page-scroll btn btn-xl"%>
             </p>
           </div>
           <div class="tab-pane" id="panel-659206">

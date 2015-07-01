@@ -17,7 +17,11 @@ class UsersController < ApplicationController
  end
 
  def create
+  byebug
     @user = User.new(user_params)
+    if !Organisation.find(@user.organisation_id).users.any? then
+      @user.admin=1
+    end
     if @user.save
        @user.send_activation_email
       flash[:info] = "Please check your email to activate your account."
@@ -49,16 +53,7 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
-    private
-
-    def user_params
-      params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation,
-                                   :organisation_id,:bio,:jobtitle,
-                                   :facebook,:twitter,:linkedin)
-    end
-
-   # Before filters
+    # Before filters
 
     # Confirms a logged-in user.
   def logged_in_user
@@ -83,5 +78,10 @@ class UsersController < ApplicationController
       flash[:warning] ="Function can only be performed by admin user"
       redirect_to(root_url) unless current_user.admin?
   end
+   private
+    def user_params
+      params.require(:user).permit(:name, :email,:organisation_id,:password,:password_confirmation,
+                      :admin,:title,:jobtitle,:bio,:facebook,:twitter,:linkedin)
+    end
 
 end

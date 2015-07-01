@@ -1,9 +1,8 @@
-<li> 
-       
-	  <p><%= link_to ">>>", task%></p>
-      <p><%=task.content %></p>
-      <p class="text-muted"><%=task.user.name%></p>
-      <span class="timestamp">
-    Posted <%= time_ago_in_words(task.created_at) %> ago.
-  </span>
-</li>
+    <tr>
+     <td><%= task.created_at %></td>
+     <td><label><%= link_to task.content[0..50],task %></label></td>
+     <td><%= if task.status then "Open" else "Closed" end%></td>
+     <td><%= task.user.name %></td>
+    </tr>
+
+   

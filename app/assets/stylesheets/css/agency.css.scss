@@ -83,7 +83,7 @@ h6 {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
     border-color: #f6bf01;
-    color: #fff;
+    /*color: #fff;*/
     background-color: #fec503;
 }
 
@@ -210,7 +210,7 @@ fieldset[disabled] .btn-xl.active {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
-    color: #fff;
+    color: #777;
 }
 
 .navbar-default .nav li a:hover,
@@ -266,7 +266,7 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(image_path('header-bg.jpg')) ;
+    background-image: url(image_path('notebook-bg.jpeg')) ;
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -278,6 +278,7 @@ header {
 header .intro-text {
     padding-top: 100px;
     padding-bottom: 50px;
+    color: #777;
 }
 
 header .intro-text .intro-lead-in {
