@@ -17,7 +17,6 @@ class UsersController < ApplicationController
  end
 
  def create
-  byebug
     @user = User.new(user_params)
     if !Organisation.find(@user.organisation_id).users.any? then
       @user.admin=1

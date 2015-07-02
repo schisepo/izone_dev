@@ -23,7 +23,6 @@ class TasksController < ApplicationController
 
   	def update
     @task = Task.find(params[:id])
-    byebug
     if @task.update_attributes(task_params)
       # Handle a succes sful update.
       flash[:success] = "task updated"
