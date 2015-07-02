@@ -18,7 +18,6 @@ def index
  	   if @organisation.save
 	      flash[:info] = "Organisation Created."
 	      flash[:danger]="Please create a profile for one of your founders."
- 		#byebug
  		redirect_to new_organisation_user_path(@organisation)
 	     # redirect_to @organisation
 	    else

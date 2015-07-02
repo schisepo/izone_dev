@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+
   def home
   	#client = Twitter::REST::Client.new do |config|
 	  #config.consumer_key = 'P3yk6A0OwYE4gnBkLPs7Z2QYJ'
@@ -11,6 +12,12 @@ class StaticPagesController < ApplicationController
   	#@tweet_news = client.user_timeline(@twitter_user, {count: 3})
   	#@tweet_news=client.user_timeline("schisepo")
   	#byebug
+  end
+  def sendcontact
+    UserMailer.contact_us(params[:name],params[:email],params[:phone],params[:message]).deliver_now
+    redirect_to(root_url)
+  end
+  def edit
   end
 
   def help

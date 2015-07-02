@@ -19,4 +19,14 @@ class UserMailer < ApplicationMailer
      @user = user
     mail to: user.email, subject: "Password reset"
   end
+
+  #Contact Us Email
+  def contact_us(name,email,phone,content)
+    @user = User.new
+    @user.name=name
+    @user.email=email
+    @user.title =phone
+    @user.bio =content
+    mail to: "sandra@izonehub.co.zw" , subject: "Contact Us -#{name}"
+  end
 end

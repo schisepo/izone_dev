@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'password_resets/edit'
 
   get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
+  post   'login'   => 'sessions#create' 
   delete 'logout'  => 'sessions#destroy'
   #delete 'destroy' => 'users#destroy'
 
@@ -19,9 +19,13 @@ Rails.application.routes.draw do
 
   get 'contact' => 'static_pages#contact'
 
+  post 'sendcontact'   => 'static_pages#sendcontact'
+
   get 'signup'=>'users#new'
 
   get 'register' =>'organisations#new'
+
+
 
   root 'static_pages#home'
 
