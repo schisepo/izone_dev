@@ -14,12 +14,9 @@
       <p class="text-muted"><%=@user.jobtitle%></p>
       <p><%=@user.bio%></p>
       <ul class="list-inline social-buttons">
-        <li><a href="#"><i class="fa fa-twitter"></i></a>
-        </li>
-        <li><a href="#"><i class="fa fa-facebook"></i></a>
-        </li>
-        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-        </li>
+      <li><%= link_to content_tag(:i,nil,class: 'fa fa-facebook'),"https://www.facebook.com/#{@user.facebook}" %> </li>      
+       <li><%= link_to content_tag(:i,nil,class: 'fa fa-twitter'),"https://www.twitter.com/#{@user.twitter}" %> </li>
+        <li><%= link_to content_tag(:i,nil,class: 'fa fa-linkedin'),"https://#{@user.linkedin}" %> </li>
       </ul>
    </div>
 </div>
