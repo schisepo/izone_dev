@@ -8,12 +8,7 @@
         <% if logged_in? %>
         <% if current_user.admin? && !current_user?(user) %>
 		    <td><%= link_to "", user, method: :delete,
-		                                  data: { confirm: "Permanantly remove #{user.name}?"}, class:"glyphicon glyphicon-trash" %></td>
+		                                  data: { confirm: "Permanantly remove #{user.name}?"}, class:"fa fa-trash" %></td>
 		  <% end %>
  		 <% end %>
  	</tr>
-
-
-
-
-
