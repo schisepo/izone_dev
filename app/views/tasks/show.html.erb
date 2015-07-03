@@ -7,43 +7,48 @@
                  <!--    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
             </div>
         </div>
-       <div class="col-sm-4">
+       <div class="col-lg-12">
           <div class="row">
-            <div class="col-xs-12 text-right">
-                      <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-            </div>
-            <p><label>Created On: </label><%= @task.created_at %></p>
-            <p><label>Assigned To: </label><%= @task.user.name %></p>
-            <p><label>Task Content: </label><%= @task.content %></p>
-             <%= form_for(@task) do |f| %>
-                <div class="panel-group" id="panel-569650">
-                    <div class="panel panel-default">
-                    <div class="panel-heading">
-                       <a class="panel-title" data-toggle="collapse" data-parent="#panel-569650" href="#panel-element-454753">Manage Task</a>
-                    </div>
-                    <div id="panel-element-454753" class="panel-collapse collapse in">
-                        <div class="panel-body">
-                       <label>Re-Assign: </label><%= collection_select(:task, :user_id, User.where(organisation_id:@task.user.organisation_id), :id, :name_display, prompt: true) %>
-                      <table>
-                          <tr>
-                              <td><%= f.label 'status_true', 'Open' %></td>
-                              <td><%= f.radio_button :status, true %></td>
-                          </tr>
+                <div class="col-lg-8 text-left">
+                <p><label>Created On: </label> <%= @task.created_at %></p>
+                <p><label>Assigned To: </label> <%= @task.user.name %></p>
+                <p><label>Task Content: </label> <%= @task.content %></p>
+                <p><%= link_to "Add Comment", new_task_comment_path(@task),class:"page-scroll btn btn-xl"%></p>
+                 <%= form_for(@task) do |f| %>
+                    <div class="panel-group" id="panel-569650">
+                        <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <a class="panel-title" data-toggle="collapse" data-parent="#panel-569650" href="#panel-element-454753">Manage Task</a>
+                        </div>
+                        <div id="panel-element-454753" class="panel-collapse collapse">
+                            <div class="panel-body">
+                           <label>Re-Assign: </label><%= collection_select(:task, :user_id, User.where(organisation_id:@task.user.organisation_id), :id, :name_display, prompt: true) %>
+                          <table>
+                              <tr>
+                                  <td><%= f.label 'status_true', 'Open' %></td>
+                                  <td><%= f.radio_button :status, true %></td>
+                              </tr>
 
-                          <tr>
-                              <td><%= f.label 'status_false', 'Closed' %></td>
-                              <td><%= f.radio_button :status, false %></td>
-                          </tr>
-                      </table>
-                       <%= f.submit "Update", class: "btn btn-primary" %>
-              <% end %>
+                              <tr>
+                                  <td><%= f.label 'status_false', 'Closed' %></td>
+                                  <td><%= f.radio_button :status, false %></td>
+                              </tr>
+                          </table>
+                           <%= f.submit "Update", class: "btn btn-primary" %>
+                  <% end %>
 
+                            </div>
+                        </div>
                         </div>
                     </div>
-                    </div>
-                </div>
+                  </div>
+                  <div class="col-lg-4 text-right">
+                     <% @comments.each do |comment| %>
+                            <p><%= render comment %></p>
+                  <% end %>  
+                  </div>
           </div>
-        </div>
+          </div>
   </div>
 </section>
  

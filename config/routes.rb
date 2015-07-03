@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'comments/new'
+
+  get 'comments/create'
+
   get 'password_resets/new'
 
   get 'password_resets/edit'
@@ -32,6 +36,10 @@ Rails.application.routes.draw do
   resources:users
   resources:organisations
   resources:tasks
+  resources:comments
+  resources:tasks do
+    resources :comments
+  end
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :organisations do 

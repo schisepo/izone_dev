@@ -1,0 +1,21 @@
+<% provide(:title, 'Add Comment') %>
+<section id="portfolio" class="bg-light-gray organisation">
+  <div class="container">
+    <div class="row">
+            <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Add Comment</h2>
+            </div>
+        </div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [@comment] do |f| %>
+      <%= render 'shared/comment_error_messages' %>
+      <%= f.hidden_field :task_id %>
+      <%= f.label :comment %>
+      <%= f.text_area :comment, class: 'form-control' %>    
+    <%= f.submit "Add Comment", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+</div>
+</section>

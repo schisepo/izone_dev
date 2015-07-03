@@ -4,13 +4,15 @@ class TasksController < ApplicationController
  	end
  	def show
     	@task = Task.find(params[:id])
-    end
-    def new
+      @comments=@task.comments.paginate(page: params[:page])  
+  end
+
+  def new
 	    @task = Task.new
 	    @task.organisation_id =params[:organisation_id]
 	    @task.user_id = current_user.id
-
  	end
+
  	def create
 	    @task = Task.new(task_params)
 	    @task.status = 1
