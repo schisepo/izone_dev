@@ -3,21 +3,6 @@
 
 /* mixins, variables, etc. */
 
-$gray-base:              #000 !default;
-$gray-darker:            lighten($gray-base, 13.5%) !default; // #222
-$gray-dark:              #2C5FAA;   // #333
-$gray:                   #E42930; // #555
-$gray-light:             #688EC1; // #777
-$gray-lighter:           #C0ADBF; // #eee
-
-$brand-primary:         #5075B2; // #337ab7
-$brand-success:         #5cb85c !default;
-$brand-info:            #5bc0de !default;
-$brand-warning:         #f0ad4e !default;
-$brand-danger:          #d9534f !default;
-
-
-
 $gray-medium-light: #eaeaea;
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -29,7 +14,7 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  padding-top: 20px;
+  padding-top: 60px;
 }
 
 section {
@@ -74,38 +59,17 @@ p {
   line-height: 1.7em;
 }
 
-/* nav bar*/
-
-.navbar-default {
-  background-color: #688ec1;
-  border-color: #e7e7e7;
-}
-
-.navbar-brand {
-  padding: 0px;
-}
-.navbar-default .navbar-nav > li > a{
-  color: #2c5faa;
-}
-
-  .navbar-right {
-     margin-right: -65px;
-  }
-
-.text-muted {
-  color: #2c5faa;
-}
 
 /* header */
 
-a#logo {
+#logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  /*color: white;*/
+  color: white;
   /*text-transform: uppercase;*/
   letter-spacing: -1px;
-  
+  padding-top: 9px;
   font-weight: bold;
   &:hover {
     color: white;
