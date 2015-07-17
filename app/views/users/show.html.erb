@@ -7,18 +7,24 @@
                  <!--    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
             </div>
         </div>
-<div class="col-sm-4">
+<div class="col-lg-4">
     <div class="team-member">
+      <div class="row">
       <%= gravatar_for @user %>
-      <h4><%= @user.name %></h4>
+      </div>
+      <div class ="row text-left" >     
       <p class="text-muted"><%=@user.jobtitle%></p>
-      <p><%=@user.bio%></p>
+      <p class ="text-muted"><%=@user.email%></p>
+      </div>
+   </div>
+</div>
+<div class ="col-lg-8 text-center">
+  <p><%=@user.bio%></p>
       <ul class="list-inline social-buttons">
       <li><%= link_to content_tag(:i,nil,class: 'fa fa-facebook'),"https://www.facebook.com/#{@user.facebook}" %> </li>      
        <li><%= link_to content_tag(:i,nil,class: 'fa fa-twitter'),"https://www.twitter.com/#{@user.twitter}" %> </li>
         <li><%= link_to content_tag(:i,nil,class: 'fa fa-linkedin'),"https://#{@user.linkedin}" %> </li>
       </ul>
-   </div>
 </div>
 </div>
 </section>
