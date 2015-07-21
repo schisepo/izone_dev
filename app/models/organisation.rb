@@ -5,4 +5,8 @@ class Organisation < ActiveRecord::Base
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 	validates :email,length:{maximum:240},
 	format:{with: VALID_EMAIL_REGEX}
+
+	 def self.search(search)
+        where("name like ?", "%#{search}%") 
+  	 end
 end

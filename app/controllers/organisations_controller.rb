@@ -1,7 +1,12 @@
 class OrganisationsController < ApplicationController
 
 def index
-    @organisations = Organisation.paginate(page: params[:page])
+    if params[:q]
+      @organisations = Organisation.search(params[:q]).order("created_at DESC").paginate(page: params[:page])
+    else
+      @organisations = Organisation.paginate(page: params[:page])
+    end
+     #@organisations = Organisation.paginate.search(params[:search])
  end
  def new
     @organisation = Organisation.new
@@ -23,6 +28,9 @@ def index
 	    else
 	      render 'new'
 	    end
+ end
+ def search
+	@organisations = Organisation.paginate.search(params[:search])
  end
  private
 

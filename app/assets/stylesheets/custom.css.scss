@@ -30,6 +30,7 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 20px;
+  background-color:#F7F7F7;
 }
 
 section {
@@ -76,13 +77,23 @@ p {
 
 /* nav bar*/
 
+.navbar{
+  min-height: 100px;
+}
+
+
 .navbar-default {
-  background-color: #688ec1;
+  background-color: #F7F7F7;
   border-color: #e7e7e7;
 }
 
 .navbar-brand {
   padding: 0px;
+
+}
+
+.navbar-default .navbar-brand{
+  background-color: #F7F7F7;  
 }
 .navbar-default .navbar-nav > li > a{
   color: #2c5faa;
@@ -110,12 +121,17 @@ p {
 }
 
 section.bg-light-gray.organisation {
-    padding:40px;
+    padding:85px;
 }
 /* header */
-
+#social-links{
+  border: 1px solid #DDD;
+  border-radius: 4px;
+  padding: 8px 8px 8px 8px;
+}
 a#logo {
   float: left;
+  background-color: #F7F7F7;
   margin-right: 10px;
   font-size: 1.7em;
   /*color: white;*/
@@ -132,10 +148,12 @@ a#logo {
 /* footer */
 
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
+  margin-top: 0px;
+  padding-top: 0px;
   border-top: 1px solid $gray-medium-light;
   color: $gray-light;
+  font-size:10px;
+  background-color: #F7F7F7;
   a {
     color: $gray;
     &:hover {
@@ -291,6 +309,7 @@ input {
     img {
       display: block;
       padding: 5px 0;
+
     }
   }
   .timestamp {
@@ -328,6 +347,7 @@ span.picture {
 }
 a#logo{
   /*background-image:url('izone-calender.png')*/
+  background-color: #F7F7F7;
 }
 
 div.col-md-4.column.blockquote {
