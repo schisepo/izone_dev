@@ -3,7 +3,7 @@
         <div class="container">         
   <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <div class="row">
+
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -14,6 +14,7 @@
                 </button>
                  <%= link_to image_tag('izone-logo.png'), root_path(anchor: "page-top"),class:"navbar-brand page-scroll",id:"logo"%>
             </div>
+             <div class="row">
                     <div class ="col-lg-11">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="hidden">
@@ -52,10 +53,10 @@
                                       </li>
                                     </ul>
                                   </li>
-                                 <% else %>
+                            <% else %>
                                     <li><%= link_to "Log in", login_path %></li>
                                    
-                                  <% end %>
+                            <% end %>
                                  <li>
                                  <%= link_to "Contact", root_path(anchor: "contact"),class:"page-scroll"%></li>
                         </ul>
@@ -82,7 +83,7 @@
                       </div>
                     <% end %>
                     </div>                    
-               </div>
+            </div>
             <!-- /. .row -->
             </div>
             <!-- /.navbar-collapse -->
