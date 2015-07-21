@@ -15,7 +15,7 @@
                  <%= link_to image_tag('izone-logo.png'), root_path(anchor: "page-top"),class:"navbar-brand page-scroll",id:"logo"%>
             </div>
              <div class="row">
-                    <div class ="col-lg-11">
+                    <div class ="col-lg-11 col-md-11 col-sm-11">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="hidden">
                                 <a href="/"></a>
@@ -61,7 +61,7 @@
                                  <%= link_to "Contact", root_path(anchor: "contact"),class:"page-scroll"%></li>
                         </ul>
                     </div>
-                    <div class ="col-lg-10 col-sm-5">
+                    <div class ="col-lg-10 col-md-10 col-sm-10">
                         <ul id ="social-links" class="list-inline navbar-right social-buttons text-center">
                             <small class ="text-muted">Connect with us:</small>
                             <li><a href="http://www.twitter.com/izonezw"><i class="fa fa-twitter"></i></a>
@@ -72,7 +72,7 @@
                             </li>
                          </ul>
                     </div>
-                    <div class ="col-lg-2 col-sm-1 navbar-right">
+                    <div class ="col-lg-2 col-md-2 col-sm-2 navbar-right">
                      <%= form_tag(organisations_path, :method => "get", class: "navbar-form", id: "search-form") do %>
                      <div class="input-group margin-bottom-sm">
                       
