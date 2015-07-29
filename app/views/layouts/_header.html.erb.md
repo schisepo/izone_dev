@@ -1,0 +1,93 @@
+<!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">         
+  <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                 <%= link_to image_tag('izone-logo.png'), root_path(anchor: "page-top"),class:"navbar-brand page-scroll",id:"logo"%>
+            </div>
+             <div class="row">
+                    <div class ="col-lg-11 col-md-11 col-sm-11">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="hidden">
+                                <a href="/"></a>
+                            </li>
+                             <li>
+                                 <%= link_to "About Us", root_path(anchor: "about"),class:"page-scroll"%></li>
+                             <li>
+                                 <%= link_to "Our Team", root_path(anchor: "team"),class:"page-scroll"%>
+                            </li>
+                            <li>
+                                <%= link_to "Clients", organisations_path,class:"page-scroll"%>
+                            </li>
+                            <li>
+                             <%= link_to "Services", root_path(anchor: "services"),class:"page-scroll"%>
+                             </li>                
+                            <% if logged_in? %>
+                                    <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                      Account <b class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                    <li><%= link_to "My Organisation", Organisation.find(current_user.organisation_id) %></li>
+                                      <li><%= link_to "My Profile", current_user %></li>
+                                      <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
+                                     
+                                       <% if current_user.admin? %>
+                                        <li class="divider"></li>
+                                           <li><%= link_to "Manage Clients", organisations_path,class:"page-scroll"%></li>
+                                           <li><%= link_to "Manage Users", users_path,class:"page-scroll"%></li>
+                                           <li class="divider"></li>
+                                        <% end %>
+                                      
+                                      <li>
+                                        <%= link_to "Log out", logout_path, method: "delete" %>
+                                      </li>
+                                    </ul>
+                                  </li>
+                            <% else %>
+                                    <li><%= link_to "Log in", login_path %></li>
+                                   
+                            <% end %>
+                                 <li>
+                                 <%= link_to "Contact", root_path(anchor: "contact"),class:"page-scroll"%></li>
+                        </ul>
+                    </div>
+                    <div class ="col-lg-10 col-md-10 col-sm-10">
+                        <ul id ="social-links" class="list-inline navbar-right social-buttons text-center">
+                            <small class ="text-muted">Connect with us:</small>
+                            <li><a href="http://www.twitter.com/izonezw"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="http://www.facebook.com/izonezw"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="http://www.linkedin.com/izonezw"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                         </ul>
+                    </div>
+                    <div class ="col-lg-2 col-md-3 col-sm-3 navbar-right">
+                     <%= form_tag(organisations_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+                     <div class="input-group margin-bottom-sm">
+                      
+                          <%= text_field_tag(:q,nil,class:"form-control text-muted",placeholder:"search") %>
+                          <div class="input-group-btn">
+                             <%= button_tag("", class: "btn btn-default") do %><i class="glyphicon glyphicon-search"></i> <% end %>
+                          </div>
+                      </div>
+                    <% end %>
+                    </div>                    
+            </div>
+            <!-- /. .row -->
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+                
