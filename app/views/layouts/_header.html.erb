@@ -12,11 +12,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                 <%= link_to image_tag('izone-logo.png'), root_path(anchor: "page-top"),class:"navbar-brand page-scroll",id:"logo"%>
             </div>
-             <div class="row">
-                    <div class ="col-lg-11 col-md-11 col-sm-11">
-                        <ul class="nav navbar-nav navbar-right">
+                 </div>
+
+            <div class ="row">
+                <div class ="col-lg-3 col-md-6 col-sm-6 col-xs-6" >
+                    <%= link_to image_tag('izone-logo.png'), root_path(anchor: "page-top"),class:"navbar-brand page-scroll",id:"logo"%> 
+                </div>
+                <div class="col-lg-8 col-md-6 col-sm-7 col-xs-7">
+                    <ul class="nav navbar-nav navbar-right">
                             <li class="hidden">
                                 <a href="/"></a>
                             </li>
@@ -60,7 +64,11 @@
                                  <li>
                                  <%= link_to "Contact", root_path(anchor: "contact"),class:"page-scroll"%></li>
                         </ul>
-                    </div>
+                </div>
+            </div>           
+
+             <div class="row">
+
                     <div class ="col-lg-10 col-md-10 col-sm-10">
                         <ul id ="social-links" class="list-inline navbar-right social-buttons text-center">
                             <small class ="text-muted">Connect with us:</small>
@@ -72,7 +80,7 @@
                             </li>
                          </ul>
                     </div>
-                    <div class ="col-lg-2 col-md-2 col-sm-2 navbar-right">
+                    <div class ="col-lg-2 col-md-3 col-sm-3 navbar-right">
                      <%= form_tag(organisations_path, :method => "get", class: "navbar-form", id: "search-form") do %>
                      <div class="input-group margin-bottom-sm">
                       
@@ -85,8 +93,6 @@
                     </div>                    
             </div>
             <!-- /. .row -->
-            </div>
-            <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>

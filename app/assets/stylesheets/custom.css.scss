@@ -95,10 +95,16 @@ p {
 .navbar-default .navbar-brand{
   background-color: #F7F7F7;  
 }
+
 .navbar-default .navbar-nav > li > a{
   color: #2c5faa;
   font-size: 10px;
 }
+
+.navbar-form {
+    margin: -5px -20px;
+    padding: 10px 0px;
+    }
 
   .navbar-right {
      margin-right: -65px;
@@ -124,11 +130,12 @@ section.bg-light-gray.organisation {
     padding:85px;
 }
 /* header */
-#social-links{
+.social-links{
   border: 1px solid #DDD;
   border-radius: 4px;
   padding: 8px 8px 8px 8px;
 }
+
 a#logo {
   float: left;
   background-color: #F7F7F7;
