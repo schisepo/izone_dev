@@ -131,7 +131,8 @@ p {
 }
 
 section.bg-light-gray.organisation {
-    padding:85px;
+    padding: 15px;
+    padding-top: 120px;
 }
 /* header */
 .social-links{
@@ -399,4 +400,9 @@ li{
 .floatright{
   
   float:right;
+}
+ul.nav.nav-tabs{
+  li{
+  /*background-color:#c0adbf;*/
+  }
 }
