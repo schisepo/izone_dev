@@ -86,6 +86,10 @@ p {
   background-color: #F7F7F7;
   border-color: #e7e7e7;
 }
+.navbar-default .navbar-toggle {
+    border-color: #4f79e9;
+    background-color: #fff;
+}
 
 .navbar-brand {
   padding: 0px;
@@ -102,8 +106,8 @@ p {
 }
 
 .navbar-form {
-    margin: -5px -20px;
-    padding: 10px 0px;
+    margin: 2px -6px;
+    padding: 0px 0px;
     }
 
   .navbar-right {
@@ -131,7 +135,7 @@ section.bg-light-gray.organisation {
 }
 /* header */
 .social-links{
-  border: 1px solid #DDD;
+  /*border: 1px solid #DDD;*/
   border-radius: 4px;
   padding: 8px 8px 8px 8px;
 }
@@ -238,6 +242,7 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
+  border-radius: 50%;
 }
 
 .gravatar_edit {

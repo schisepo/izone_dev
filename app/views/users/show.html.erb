@@ -1,30 +1,35 @@
 <% provide(:title, @user.name) %>
 <section id="portfolio" class="bg-light-gray organisation">
   <div class="container">
-    <div class="row">
-            <div class="col-lg-12 text-center">
-                    <h2 class="section-heading"><%=@user.name%></h2>
-                 <!--    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
-            </div>
+    <div class="row">   
+
+          <div class="col-lg-2 col-md-2 col-ms-4 col-xs-6">
+          <div class="row">
+              <div class="team-member">
+              <p>
+                  <div class="col-lg-12 col-xs-12">
+                      <h2 class="text-muted text-left"><%=@user.name%></h2>                    
+                      <%= gravatar_for @user %>
+                  </div>
+                  <div class ="col-lg-12 col-xs-12 text-left" >     
+                      <p class="text-muted"><%=@user.jobtitle%></p>
+                      <p class ="text-muted"><%=@user.email%></p>
+                      <p text-left>
+                      <ul class="list-inline social-buttons text-center">
+                          <li><%= link_to content_tag(:i,nil,class: 'fa fa-facebook'),"https://www.facebook.com/#{@user.facebook}" %> </li>      
+                          <li><%= link_to content_tag(:i,nil,class: 'fa fa-twitter'),"https://www.twitter.com/#{@user.twitter}" %> </li>
+                          <li><%= link_to content_tag(:i,nil,class: 'fa fa-linkedin'),"https://#{@user.linkedin}" %> </li>
+                      </ul></p>
+                  </div>
+             </div>
+          </div>
+          </div>
+
+        <div class ="col-lg-10 col-md-10 col-ms-8 col-xs-6 text-left">
+          <h4>Bio</h4>
+          <p><%=@user.bio%></p>
+              
         </div>
-<div class="col-lg-4">
-    <div class="team-member">
-      <div class="row">
-      <%= gravatar_for @user %>
-      </div>
-      <div class ="row text-left" >     
-      <p class="text-muted"><%=@user.jobtitle%></p>
-      <p class ="text-muted"><%=@user.email%></p>
-      </div>
-   </div>
-</div>
-<div class ="col-lg-4 text-left">
-  <p><%=@user.bio%></p>
-      <ul class="list-inline social-buttons">
-      <li><%= link_to content_tag(:i,nil,class: 'fa fa-facebook'),"https://www.facebook.com/#{@user.facebook}" %> </li>      
-       <li><%= link_to content_tag(:i,nil,class: 'fa fa-twitter'),"https://www.twitter.com/#{@user.twitter}" %> </li>
-        <li><%= link_to content_tag(:i,nil,class: 'fa fa-linkedin'),"https://#{@user.linkedin}" %> </li>
-      </ul>
 </div>
 </div>
 </section>
