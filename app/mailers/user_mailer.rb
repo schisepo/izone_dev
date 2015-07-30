@@ -27,6 +27,6 @@ class UserMailer < ApplicationMailer
     @user.email=email
     @user.title =phone
     @user.bio =content
-    mail to: "info@izonehub.co.zw" , subject: "Contact Us -#{name}"
+    mail to: "schisepo@gmail.com" , subject: "Contact Us -#{name}"
   end
 end

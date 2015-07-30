@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
     return false if digest.nil?
     BCrypt::Password.new(digest).is_password?(token)
   end
-
+ 
   # Forgets a user.
   def forget
     update_attribute(:remember_digest, nil)
