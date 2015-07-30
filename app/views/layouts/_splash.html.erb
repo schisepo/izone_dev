@@ -1,7 +1,8 @@
     <!-- Header -->
     <header>
         <div class="container">
-
+        <div class="row">
+        <div class ="col-lg-12">
            <div class="intro-text">
                 <% flash.each do |message_type, message| %>
                 <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
@@ -10,9 +11,9 @@
                 <div class="intro-heading">It's Great To Meet You</div>
                 <li><%= link_to "What We Do", root_path(anchor: "services"),class:"page-scroll btn btn-xl"%></li>   
                 <p> 
-                <li><%= link_to "Class '15", register_path ,class:"page-scroll btn btn-xl"%></li>               
-
-
+                <li><%= link_to "Class '15", register_path ,class:"page-scroll btn btn-xl"%></li>    
             </div>
-        </div>
+         </div> <!--Col-lg-->
+        </div><!--Row-->
+        </div><!--Container-->
     </header>
