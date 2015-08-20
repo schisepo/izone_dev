@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'value_prop/new'
+
+  get 'value_prop/edit'
+
+  get 'value_prop/update'
+
   get 'comments/new'
 
   get 'comments/create'
@@ -37,6 +43,7 @@ Rails.application.routes.draw do
   resources:organisations
   resources:tasks
   resources:comments
+  resources:value_props
   resources:tasks do
     resources :comments
   end
@@ -45,6 +52,7 @@ Rails.application.routes.draw do
   resources :organisations do 
     resources :users 
     resources :tasks
+    resource :value_prop
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

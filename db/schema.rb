@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150703083520) do
+ActiveRecord::Schema.define(version: 20150806154217) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "comment"
@@ -68,5 +68,16 @@ ActiveRecord::Schema.define(version: 20150703083520) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["organisation_id"], name: "index_users_on_organisation_id"
+
+  create_table "value_props", force: :cascade do |t|
+    t.text     "who"
+    t.text     "what"
+    t.text     "why"
+    t.integer  "organisation_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "value_props", ["organisation_id"], name: "index_value_props_on_organisation_id"
 
 end
