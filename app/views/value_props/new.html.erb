@@ -1,0 +1,26 @@
+<% provide(:title, 'Create Value Proposition') %>
+<section id="portfolio" class="bg-light-gray organisation">
+  <div class="container">
+    <div class="row">
+            <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Create Value Proposition</h2>
+            </div>
+    </div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [@valueprop] do |f| %>
+      
+      <%= f.hidden_field :organisation_id %>
+      <%= f.label :who %>
+      <%= f.text_area :who, class: 'form-control' %>
+      <%= f.label :what %>
+      <%= f.text_area :what, class: 'form-control' %>
+      <%= f.label :why %>
+      <%= f.text_area :why, class: 'form-control' %>
+    
+    <%= f.submit "Create Value Proposition", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+</div>
+</section>
