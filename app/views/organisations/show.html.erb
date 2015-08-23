@@ -92,8 +92,24 @@
           <% end %> <!--End hide Tasks-->
           <div class="tab-pane" id="panel-659206">
             <p>
-              <%= link_to "Value Proposition", new_organisation_value_prop_path(@organisation),class:"page-scroll btn btn-xl"%>
-              Value Prop Section Coming soon
+              <% if @organisation.value_prop.nil? %>
+                <% if logged_in? && belongs_to_organisation? %>
+                  <%= link_to "Value Proposition", new_organisation_value_prop_path(@organisation),class:"page-scroll btn btn-xl"%>
+                <% end %>
+              <% else%>
+              <h2 class="text-muted">Who we are</h2>
+              <%= @valueprop.who %>
+
+              <p>
+               <h2 class="text-muted">What we do</h2>
+              <%= @valueprop.what %>
+              <p>
+              <h2 class="text-muted">Why we do what we do</h2>
+              <%= @valueprop.why %>
+
+
+              <% end %>
+             <!-- Value Prop Section Coming soon-->
             </p>
           </div>
         </div>

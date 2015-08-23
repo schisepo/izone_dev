@@ -13,9 +13,12 @@ def index
 
  end
  def show
- 	@organisation =Organisation.find(params[:id])
+#byebug()
+ 	@organisation =Organisation.find(params[:id])  
  	@users=@organisation.users.paginate(page: params[:page])
  	@tasks=@organisation.tasks.paginate(page: params[:page])
+  @valueprop=@organisation.value_prop
+  #byebug()
  	
  end
  def create
