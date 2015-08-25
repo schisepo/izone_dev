@@ -5,8 +5,8 @@ module OrganisationsHelper
   	if current_user.nil?
   		return false
   	else
-#  		byebug()
-  		!((@organisation.users.find_by id: 1).nil?)
+		#byebug()
+  		!((@organisation.users.find_by id: current_user.id).nil?)
   	end
   end
 
