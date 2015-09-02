@@ -1,4 +1,7 @@
 class OrganisationsController < ApplicationController
+  before_action :logged_in_user, only: [:destroy]
+  before_action :correct_user,   only: [:edit, :update]
+  before_action :admin_user,     only: :destroy
 
 def index
     if params[:q]
@@ -32,9 +35,41 @@ def index
 	      render 'new'
 	    end
  end
+
+def destroy
+    Organisation.find(params[:id]).destroy
+    flash[:success] = "Organisation deleted"
+    redirect_to organisations_url
+  end
+
  def search
 	@organisations = Organisation.paginate.search(params[:search])
  end
+
+# Confirms a logged-in user.
+  def logged_in_user
+     unless logged_in?
+       store_location
+       flash[:danger] = "Please log in."
+       redirect_to login_url
+     end
+  end
+  # Confirms the correct user.
+  def correct_user
+      @user = User.find(params[:id])
+      unless current_user?(@user)
+        flash[:danger]="You can only view your own profile"
+        redirect_to(root_url)
+      end
+      #redirect_to(root_url) unless current_user?(@user)
+  end
+
+       # Confirms an admin user.
+  def admin_user
+      flash[:warning] ="Function can only be performed by admin user"
+      redirect_to(root_url) unless current_user.admin?
+  end
+ 
  private
 
     def organisation_params
