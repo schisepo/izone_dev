@@ -36,11 +36,11 @@ def index
 	    end
  end
 
-def destroy
-    Organisation.find(params[:id]).destroy
-    flash[:success] = "Organisation deleted"
-    redirect_to organisations_url
-  end
+# def destroy
+#     Organisation.find(params[:id]).destroy
+#     flash[:success] = "Organisation deleted"
+#     redirect_to organisations_url
+#   end
 
  def search
 	@organisations = Organisation.paginate.search(params[:search])
