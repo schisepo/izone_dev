@@ -23,12 +23,19 @@ class TasksController < ApplicationController
 	    end
   	end
 
+  def destroy
+    myorg = Task.find(params[:id]).organisation_id
+    Task.find(params[:id]).destroy
+    flash[:success] = "Task deleted"
+    redirect_to Organisation.find(myorg)
+  end
+
   	def update
     @task = Task.find(params[:id])
     if @task.update_attributes(task_params)
       # Handle a succes sful update.
       flash[:success] = "task updated"
-      redirect_to @task
+     # redirect_to @task
 
     else
     #  render 'edit'

@@ -4,7 +4,7 @@
       <% end %>
       <td><%= link_to user.name, user %></td>
       <td class="text-muted"><%=user.jobtitle%></td>
-      <td class="text-muted"><%=user.email%></td>
+      <td class="text-muted"><%= mail_to user.email, "",class:"fa fa-envelope" %></td>
         <% if logged_in? %>
         <% if current_user.admin? && !current_user?(user) %>
 		    <td><%= link_to "", user, method: :delete,

@@ -29,8 +29,9 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  padding-top: 20px;
-  background-color:#F7F7F7;
+  padding-top: 0px;
+  background-color: transparent; 
+  
 }
 
 section {
@@ -83,25 +84,26 @@ p {
 
 
 .navbar-default {
-  background-color: #F7F7F7;
-  border-color: #e7e7e7;
+  background-color: transparent; 
+ 
 }
 .navbar-default .navbar-toggle {
-    border-color: #4f79e9;
-    background-color: #fff;
+    /*border-color: #4f79e9;*/
+    background-color: transparent;/*#fff;*/
 }
 
 .navbar-brand {
   padding: 0px;
-
+ background-color: transparent; /*#F7F7F7;*/
 }
 
 .navbar-default .navbar-brand{
-  background-color: #F7F7F7;  
+  background-color: transparent;/* #F7F7F7;  */
 }
 
+/* Change font color for Nav menu items */
 .navbar-default .navbar-nav > li > a{
-  color: #2c5faa;
+  color: #000060;
   font-size: 10px;
 }
 
@@ -115,7 +117,7 @@ p {
   }
 
   .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
-    background-color: #2c5faa;
+    background-color: transparent;/*#2c5faa;*/
   }
 
   .dropdown-menu > li > a{
@@ -143,7 +145,7 @@ section.bg-light-gray.organisation {
 
 a#logo {
   float: left;
-  background-color: #F7F7F7;
+  background-color: #transparent;
   margin-right: 10px;
   font-size: 1.7em;
   /*color: white;*/
@@ -360,7 +362,7 @@ span.picture {
 }
 a#logo{
   /*background-image:url('izone-calender.png')*/
-  background-color: #F7F7F7;
+  background-color: transparent;
 }
 
 div.col-md-4.column.blockquote {
@@ -405,4 +407,82 @@ ul.nav.nav-tabs{
   li{
   /*background-color:#c0adbf;*/
   }
+}
+
+/***intro text 2 ****/
+header .intro-text2 {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    color: #777;
+    background-image: url(image_path('purpleZebraGc_text.png')) ;
+        background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    height: 100%
+}
+
+@media(min-width:768px) {
+    header .intro-text2 {
+        padding-top: 300px;
+        padding-bottom: 200px;
+    }
+
+    header .intro-text2 .intro-lead-in {
+        margin-bottom: 25px;
+        font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 40px;
+        font-style: italic;
+        line-height: 40px;
+    }
+
+    header .intro-text2 .intro-heading {
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 75px;
+        font-weight: 700;
+        line-height: 75px;
+    }
+}
+/*** intro 3 **/
+
+header .intro-text3 {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    color: #777;
+    background-image: url(image_path('purpleRocksG_text.png')) ;
+        background-position: center center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    height: 100%
+}
+
+@media(min-width:768px) {
+    header .intro-text3 {
+        padding-top: 300px;
+        padding-bottom: 200px;
+    }
+
+    header .intro-text3 .intro-lead-in {
+        margin-bottom: 25px;
+        font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 40px;
+        font-style: italic;
+        line-height: 40px;
+    }
+
+    header .intro-text3 .intro-heading {
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 75px;
+        font-weight: 700;
+        line-height: 75px;
+    }
 }

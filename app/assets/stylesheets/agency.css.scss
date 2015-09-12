@@ -76,6 +76,7 @@ h6 {
     font-weight: 700;
     color: #fff;
     background-color: #fed136;
+
 }
 
 .btn-primary:hover,
@@ -127,7 +128,8 @@ fieldset[disabled] .btn-primary.active {
     font-size: 18px;
     font-weight: 700;
     color: #fff;
-    background-color: #fed136;
+    /*background-color: #fed136;*/
+    background-color: #2c5faa;
 }
 
 .btn-xl:hover,
@@ -137,7 +139,8 @@ fieldset[disabled] .btn-primary.active {
 .open .dropdown-toggle.btn-xl {
     border-color: #f6bf01;
     color: #fff;
-    background-color: #fec503;
+    /*background-color: #fec503;*/
+    background-color: #2c5faa;
 }
 
 .btn-xl:active,
@@ -163,6 +166,7 @@ fieldset[disabled] .btn-xl:active,
 fieldset[disabled] .btn-xl.active {
     border-color: #fed136;
     background-color: #fed136;
+
 }
 
 .btn-xl .badge {
@@ -171,8 +175,8 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default {
-    border-color: transparent;
-    background-color: #222;
+    
+    background-color: transparent;
 }
 
 .navbar-default .navbar-brand {
@@ -189,12 +193,12 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-collapse {
-    border-color: rgba(255,255,255,.02);
+    /*border-color: rgba(255,255,255,.02);*/
 }
 
 .navbar-default .navbar-toggle {
-    border-color: #fed136;
-    background-color: #fed136;
+   /* border-color: #fed136;*/
+    background-color: transparent;/*#fed136;*/
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -267,7 +271,7 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(image_path('header-bg.jpg')) ;
+    
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -276,10 +280,11 @@ header {
     -o-background-size: cover;
 }
 
+/*change header intro text*/
 header .intro-text {
     padding-top: 100px;
     padding-bottom: 50px;
-    color: #777;
+    color: #fff;
 }
 
 header .intro-text .intro-lead-in {

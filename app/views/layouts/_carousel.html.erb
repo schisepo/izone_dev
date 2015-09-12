@@ -1,0 +1,74 @@
+    <!-- Header -->
+<header >
+<div class="container-fluid">
+<div class="row">
+<div class ="col-lg-12 id="carousel-izonehub" class="carousel slide" data-ride="carousel"">
+
+
+     <!-- <div id="carousel-izonehub" class="carousel slide" data-ride="carousel">-->
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-izonehub" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-izonehub" data-slide-to="1"></li>
+          <li data-target="#carousel-izonehub" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+
+
+          <div class="item active">
+            <!--<img src="..." alt="...">-->
+                <div class="intro-text">
+                      <% flash.each do |message_type, message| %>
+                      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+                      <% end %>
+                      <div class="intro-lead-in">Welcome To Our eHub!</div>
+                      <!-- <div class="intro-heading">It's Great To Meet You</div> -->
+                      <li><%= link_to "What We Do", root_path(anchor: "services"),class:"page-scroll btn btn-xl"%></li>   
+                      <p> 
+                      <li><%= link_to "Class '15", register_path ,class:"page-scroll btn btn-xl"%></li>    
+                 </div>
+                        
+          </div>
+          <div class="item">
+                <div class ="intro-text2">
+                <% flash.each do |message_type, message| %>
+                      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+                      <% end %>
+                      <div class="intro-lead-in"></div>
+                      <!-- <div class="intro-heading">It's Great To Meet You</div> -->
+                      <li><%= link_to "What We Do", root_path(anchor: "services"),class:"page-scroll btn btn-xl"%></li>   
+                      <p> 
+
+                      <li><%= link_to "Class '15", register_path ,class:"page-scroll btn btn-xl"%></li>    
+                </div>
+          </div>
+          <div class="item">
+                <div class ="intro-text3">
+                <% flash.each do |message_type, message| %>
+                      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+                      <% end %>
+                      <div class="intro-lead-in"></div>
+                      <!-- <div class="intro-heading">It's Great To Meet You</div> -->
+                      <li><%= link_to "1776 Challenge Cup Harare '15", "http://www.1776.vc/challenge-cup/apply-to-compete/",class:"page-scroll btn btn-xl",:target=>"_blank"%></li>   
+                      <p> 
+                      <li><%= link_to "Class '15", register_path ,class:"page-scroll btn btn-xl"%></li>    
+                </div>
+                </div>
+        </div>
+
+        <!-- Controls -->
+        <!-- <a class="left carousel-control" href="#carousel-izonehub" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-izonehub" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a> -->
+     <!-- </div>-->
+</div> <!--Col-lg-->
+</div><!--Row-->
+</div><!--Container-->
+</header>

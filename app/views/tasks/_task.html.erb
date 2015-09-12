@@ -3,6 +3,8 @@
      <td><label><%= link_to task.content[0..50],task %></label></td>
      <td><%= if task.status then "Open" else "Closed" end%></td>
      <td><%= task.user.name %></td>
+     <td><%= link_to "", task, method: :delete,
+		                                  data: { confirm: "Permanantly remove #{task.content}?"}, class:"fa fa-trash" %></td>
     </tr>
 
    
