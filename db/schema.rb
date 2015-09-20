@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806154217) do
+ActiveRecord::Schema.define(version: 20150920070058) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "comment"
@@ -48,13 +48,13 @@ ActiveRecord::Schema.define(version: 20150806154217) do
     t.string   "name"
     t.string   "email"
     t.string   "title"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "password_digest"
     t.string   "remember_digest"
-    t.boolean  "admin",             default: false
+    t.boolean  "admin",               default: false
     t.string   "activation_digest"
-    t.boolean  "activated",         default: false
+    t.boolean  "activated",           default: false
     t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
@@ -64,6 +64,10 @@ ActiveRecord::Schema.define(version: 20150806154217) do
     t.string   "facebook"
     t.string   "twitter"
     t.string   "linkedin"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

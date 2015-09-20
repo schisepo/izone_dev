@@ -80,7 +80,7 @@ class UsersController < ApplicationController
    private
     def user_params
       params.require(:user).permit(:name, :email,:organisation_id,:password,:password_confirmation,
-                      :admin,:title,:jobtitle,:bio,:facebook,:twitter,:linkedin)
+                      :admin,:title,:jobtitle,:bio,:facebook,:twitter,:linkedin,:avatar)
     end
 
 end

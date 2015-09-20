@@ -64,6 +64,10 @@
             </div>
           </div>
         </div>
+        <div class="field">
+    <%= f.label :avatar %><br>
+    <%= f.file_field :avatar %>
+</div>
       </div>
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
