@@ -20,7 +20,8 @@
 
       <%= f.label :bpn %>
       <%= f.text_field :bpn, class: 'form-control' %>
-
+      <%= f.label :logo %>
+      <%= f.file_field :logo, class: 'form-control' %>
       <%= f.submit "Create my organisation", class: "btn btn-primary" %>
     <% end %>
   </div>

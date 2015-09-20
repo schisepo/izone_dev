@@ -44,6 +44,7 @@
                                       <li><%= link_to "My Organisation", Organisation.find(current_user.organisation_id) %></li>
                                         <li><%= link_to "My Profile", current_user %></li>
                                         <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
+                                        <li><%= link_to "Edit Organisation", edit_organisation_path(Organisation.find(current_user.organisation_id)) %></li>
                                        
                                          <% if current_user.admin? %>
                                           <li class="divider"></li>

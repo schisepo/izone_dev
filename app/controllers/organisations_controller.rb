@@ -15,6 +15,24 @@ def index
     @organisation = Organisation.new
 
  end
+
+  def edit
+    @organisation = Organisation.find(params[:id])
+  end
+
+  def update
+    @organisation = Organisation.find(params[:id])
+    if @organisation.update_attributes(organisation_params)
+      # Handle a succes sful update.
+      flash[:success] = "Profile updated"
+      redirect_to @organisation
+
+    else
+      render 'edit'
+    end
+  end
+
+
  def show
 #byebug()
  	@organisation =Organisation.find(params[:id])  
@@ -73,7 +91,7 @@ def index
  private
 
     def organisation_params
-      params.require(:organisation).permit(:name, :email, :bpn)
+      params.require(:organisation).permit(:name, :email, :bpn, :logo)
     end
 
 end

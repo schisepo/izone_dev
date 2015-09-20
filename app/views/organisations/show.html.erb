@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-xs-12 text-right">
-                      <h4 class="section-heading"><%= gravatar_for @organisation,size:50 %><%= @organisation.name %></h4>
+                      <h4 class="section-heading"> <%= image_tag @organisation.logo.url(:thumb), class:"gravatar",size:"50" %><%= @organisation.name %></h4>
                       <h6 class="section-subheading text-muted">Enterprise in the digital age.</h3> 
       </div>
       <p>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150920070058) do
+ActiveRecord::Schema.define(version: 20150920131715) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "comment"
@@ -28,8 +28,12 @@ ActiveRecord::Schema.define(version: 20150920070058) do
     t.string   "name"
     t.string   "email"
     t.string   "bpn"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "tasks", force: :cascade do |t|
