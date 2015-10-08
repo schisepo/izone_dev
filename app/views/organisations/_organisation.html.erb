@@ -5,7 +5,7 @@
                         <div><%= image_tag organisation.logo.url(:thumb), class:"gravatar",size:"50" %></div>
                         <br>
                         <div><%= link_to organisation.name, organisation%></p></div>
-                       <!-- <%= link_to "", organisation, method: :delete,
-		                                  data: { confirm: "Permanantly remove #{organisation.name}?"}, class:"fa fa-trash" %>-->
+                       <%= link_to "", organisation, method: :delete,
+		                                  data: { confirm: "Permanantly remove #{organisation.name}?"}, class:"fa fa-trash" %>
                     </div>
  </div>
