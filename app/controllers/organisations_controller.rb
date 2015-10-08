@@ -74,9 +74,8 @@ def index
   end
   # Confirms the correct user.
   def correct_user
-      @user = User.find(params[:id])
-      unless current_user?(@user)
-        flash[:danger]="You can only view your own profile"
+      unless (current_user.organisation_id.to_s ==(params[:id]))
+        flash[:danger]="You can only edit your own organisation."
         redirect_to(root_url)
       end
       #redirect_to(root_url) unless current_user?(@user)

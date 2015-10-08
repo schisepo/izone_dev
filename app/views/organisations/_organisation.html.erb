@@ -1,8 +1,10 @@
-<div class="col-md-4 col-sm-6 portfolio-item">
+<div class="col-lg-4 col-md-4 col-sm-6 portfolio-item">
                     
                     <div class="portfolio-caption">
                        <!-- <%= gravatar_for organisation, size: 50 %>-->
-                        <p class="text-muted"><%= image_tag organisation.logo.url(:thumb), class:"gravatar",size:"50" %></p>
+                        <div><%= image_tag organisation.logo.url(:thumb), class:"gravatar",size:"50" %></div>
+                        <br>
+                        <div><%= link_to organisation.name, organisation%></p></div>
                        <!-- <%= link_to "", organisation, method: :delete,
 		                                  data: { confirm: "Permanantly remove #{organisation.name}?"}, class:"fa fa-trash" %>-->
                     </div>
