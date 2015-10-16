@@ -43,4 +43,13 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :test
   host = 'localhost:3000'
   config.action_mailer.default_url_options = { host: host }
+  # Config for AWS
+config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['izonezw'],
+    :access_key_id => ENV['AKIAJIZRGNABY4POMW7A'],
+    :secret_access_key => ENV['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']
+  }
+}
 end
