@@ -17,7 +17,7 @@ gem 'twitter'
 gem 'twitter-text'
 gem 'font-awesome-sass'
 gem 'paperclip'
-gem  'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 gem 'rmagick'
 
 group :development, :test do
